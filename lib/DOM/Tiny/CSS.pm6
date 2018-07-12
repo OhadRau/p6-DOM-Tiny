@@ -7,7 +7,7 @@ my class Joiner {
     has @.combine;
 
     submethod BUILD(:@combine) {
-        PRE { @combine.elems !%% 2 }
+        @combine.elems !%% 2 or die;
         @!combine = @combine.reverse;
     }
 
